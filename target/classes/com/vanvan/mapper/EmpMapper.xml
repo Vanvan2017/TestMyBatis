@@ -17,6 +17,10 @@
         select * from emp where ename like '%${ename}%'
     </select>
 
+    <insert id="insertEmp">
+        insert into emp values(null)
+    </insert>
+
 <!--    <insert id="insertEmp">-->
 <!--        insert into emp values(null,#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})-->
 

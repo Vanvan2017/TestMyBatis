@@ -18,12 +18,16 @@
     </select>
 
     <insert id="insertEmp">
-        insert into emp values(null,#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})
-
-        <selectKey keyProperty="empno" resultType="int" order="AFTER">
-            select last_insert_id()
-        </selectKey>
+        insert into emp values(null)
     </insert>
+
+<!--    <insert id="insertEmp">-->
+<!--        insert into emp values(null,#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})-->
+
+<!--        <selectKey keyProperty="empno" resultType="int" order="AFTER">-->
+<!--            select last_insert_id()-->
+<!--        </selectKey>-->
+<!--    </insert>-->
 
 <!--    <update id="updateEmp">-->
 <!--         update emp set ename = #{ename} where empno = #{empno}-->
