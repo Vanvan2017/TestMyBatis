@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vanvan.mapper.EmpMapper">
+
+    <select id="selectEmp" resultType="com.vanvan.po.Emp">
+        select * from emp where empno = #{empno}
+    </select>
+
+    <select id="selectAllEmp" resultType="com.vanvan.po.Emp">
+        select * from emp
+    </select>
+
+    <select id="selectEmpByName" resultType="com.vanvan.po.Emp">
+        select * from emp where ename like '%${ename}%'
+    </select>
+
+<!--    <insert id="insertEmp">-->
+<!--        insert into emp values(null,#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})-->
+
+<!--        <selectKey keyProperty="empno" resultType="int" order="AFTER">-->
+<!--            select last_insert_id()-->
+<!--        </selectKey>-->
+<!--    </insert>-->
+
+<!--    <update id="updateEmp">-->
+<!--         update emp set ename = #{ename} where empno = #{empno}-->
+<!--    </update>-->
+
+<!--    <delete id="deleteEmp">-->
+<!--        delete from emp where empno = #{empno}-->
+<!--    </delete>-->
+
+<!--    <select id="selectEmpByCondition" resultType="Emp">-->
+<!--        select * from emp where ${column} = #{value}-->
+<!--    </select>-->
+
+<!--    <select id="selectEmpByCondition2" resultType="Emp">-->
+<!--        select * from emp where ${column} = #{value}-->
+<!--    </select>-->
+
+<!--    <select id="getEmpWithDept" resultType="hashmap">-->
+<!--        select *-->
+<!--        from emp e, dept d-->
+<!--        where e.deptno = d.deptno-->
+<!--    </select>-->
+
+<!--    <select id="getEmpWithDept2" resultMap="_empdept">-->
+<!--         select *-->
+<!--        from emp e, dept d-->
+<!--        where e.deptno = d.deptno-->
+<!--    </select>-->
+
+<!--    <resultMap id="_empdept" type="Emp" autoMapping="true">-->
+<!--        &lt;!&ndash;  <id column="empno" property="empno"></id>-->
+<!--          <result column="ename" property="ename"></result>-->
+<!--          <result column="job" property="job"></result>-->
+<!--          <result column="hiredate" property="hiredate"></result>-->
+<!--          <result column="sal" property="sal"></result>&ndash;&gt;-->
+<!--        <association property="dept" javaType="Dept" autoMapping="true">-->
+<!--            &lt;!&ndash; <id column="deptno" property="deptno"></id>-->
+<!--             <result column="dname" property="dname"></result>-->
+<!--             <result column="loc" property="loc"></result>&ndash;&gt;-->
+<!--        </association>-->
+<!--    </resultMap>-->
+
+</mapper>
